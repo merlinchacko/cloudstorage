@@ -29,13 +29,13 @@
                             <div class="container">
                                 <div class="row" style="margin: 1em;">
                                     <div class="col-sm-2">
-                                        <label for="file">Upload a New File:</label>
+                                        <label for="inputFile">Upload a New File:</label>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="file" class="form-control-file" id="file" name="file">
+                                        <input id="inputFile" type="file" class="form-control-file" name="file">
                                     </div>
                                     <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-dark">Upload</button>
+                                        <button id="submitButton" type="submit" class="btn btn-dark">Upload</button>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="#" th:action="@{/addNote}" method="POST">
-                                            <input type="hidden" name="noteId" id="note-id">
+                                            <input type="hidden" name="noteId" id="noteId">
                                             <div class="form-group">
                                                 <label for="noteTitle" class="col-form-label">Title</label>
                                                 <input type="text" name= "noteTitle" class="form-control" id="noteTitle" maxlength="20" required>
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="#" th:action="@{/addCredential}" method="POST">
-                                            <input type="hidden" name="credentialId" id="credential-id">
+                                            <input type="hidden" name="credentialId" id="credentialId">
                                             <div class="form-group">
                                                 <label for="credentialUrl" class="col-form-label">URL</label>
                                                 <input type="text" name= "url" class="form-control" id="credentialUrl" maxlength="100" required>
@@ -194,18 +194,18 @@
         <script type="text/javascript">
             // For opening the note modal
             function showNoteModal(noteId, noteTitle, noteDescription) {
-                $('#note-id').val(noteId ? noteId : '');
-                $('#note-title').val(noteTitle ? noteTitle : '');
-                $('#note-description').val(noteDescription ? noteDescription : '');
+                $('#noteId').val(noteId ? noteId : '');
+                $('#noteTitle').val(noteTitle ? noteTitle : '');
+                $('#noteDescription').val(noteDescription ? noteDescription : '');
                 $('#noteModal').modal('show');
             }
 
             // For opening the credentials modal
             function showCredentialModal(credentialId, url, username, password) {
-                $('#credential-id').val(credentialId ? credentialId : '');
-                $('#credential-url').val(url ? url : '');
-                $('#credential-username').val(username ? username : '');
-                $('#credential-password').val(password ? password : '');
+                $('#credentialId').val(credentialId ? credentialId : '');
+                $('#credentialUrl').val(url ? url : '');
+                $('#credentialUsername').val(username ? username : '');
+                $('#credentialPassword').val(password ? password : '');
                 $('#credentialModal').modal('show');
             }
         </script>

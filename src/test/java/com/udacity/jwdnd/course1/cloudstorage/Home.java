@@ -91,7 +91,6 @@ public class Home
         wait.until(ExpectedConditions.elementToBeClickable(noteTitle)).click();
 
         noteTitle.sendKeys(newTitle);
-        noteDescription.sendKeys(description);
 
         submitNote.click();
     }
@@ -131,9 +130,7 @@ public class Home
         wait.until(ExpectedConditions.elementToBeClickable(editCredential)).click();
         wait.until(ExpectedConditions.elementToBeClickable(credentialUrl)).click();
 
-        credentialUrl.sendKeys(url);
         credentialUsername.sendKeys(newUsername);
-        credentialPassword.sendKeys(password);
 
         submitCredential.click();
     }
